@@ -1,0 +1,38 @@
+{
+  "name": "mse-ui-shared",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "mse 前端子应用公共运行时（主题桥接/请求封装/权限指令/分页/CronInput 等）。契约权威方为 mse-ui 与 mse-ui-mobile 的 src/micro；各工程经 file: 相对路径依赖本包（源码直出，vite 需 optimizeDeps.exclude），对外独立交付时 npm pack 出 tarball 发布私有仓。勿在业务工程复制本包内容。",
+  "scripts": {
+    "type-check": "vue-tsc --noEmit"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./pc": "./src/pc/index.ts",
+    "./mobile": "./src/mobile/index.ts"
+  },
+  "peerDependencies": {
+    "axios": "^1.7.9",
+    "pinia": "^2.3.0",
+    "vue": "^3.5.13",
+    "@element-plus/icons-vue": "^2.3.2",
+    "element-plus": "^2.9.1",
+    "vant": "^4.9.15"
+  },
+  "peerDependenciesMeta": {
+    "element-plus": { "optional": true },
+    "@element-plus/icons-vue": { "optional": true },
+    "vant": { "optional": true }
+  },
+  "devDependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "element-plus": "^2.9.1",
+    "axios": "^1.7.9",
+    "pinia": "^2.3.0",
+    "typescript": "^5.7.2",
+    "vant": "^4.9.15",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.12"
+  }
+}
